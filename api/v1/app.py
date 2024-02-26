@@ -25,6 +25,7 @@ def removed_db(exception):
     """
     storage.close()
 
+
 @app.errorhandler(404)
 def handle_404(exception):
     """
@@ -45,6 +46,7 @@ def handle_404(exception):
     description = exception.description
     message = {'error': description}
     return make_response(jsonify(message), code)
+
 
 if __name__ == "__main__":
     app.run(host=host, port=port, threaded=True)
